@@ -1,4 +1,4 @@
-TD1.2 Découverte MI-LXC
+TD1.1 Découverte MI-LXC
 =======================
 
 Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2ca6036b-49b8-4b4c-93bb-95c5de051400). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
@@ -179,3 +179,5 @@ Organisation pour la suite de la matière
 L'infrastructure pré-existante suit le paradigme de l'_infrastructure-as-code_, c'est à dire que la topologie, les installations et les configurations sont _programmées_ (les json que vous avez manipulé ainsi que les `provision.sh`, par exemple dans `groups/target/dmz/provision.sh`). Cela permet de sauvegarder/versionner les recettes et de facilement regénérer des hôtes en cas de mauvaise manipulation. La contrepartie est de programmer les configurations plutôt que de juste les faire.
 
 A priori, vous n'utiliserez pas ces fonctionnalités (ce n'est en tous cas pas exigé). Vos configurations seront persistantes mais vous ne pourrez donc pas facilement revenir sur des erreurs de manipulation sur les hôtes rajoutés. Au-delà des comptes-rendus, vous avez donc tout intérêt à documenter vos actions car vous allez progressivement développer votre AS durant les 6 semaines de la matière, en nécessitant parfois des fonctionnalités mises en place dans un TD précédent.
+
+**Votre compte-rendu doit être déposé sur Moodle en fin de séance au format PDF uniquement**

@@ -1,4 +1,4 @@
-TD1.1 Wargame shell
+TD1.2 Wargame shell
 ===================
 
 L'objet de ce TD est de se rafraîchir en ligne de commande et de faire quelques scripts shell. Pour cela, vous ferez le maximum de challenges du wargame [Overthewire Bandit](https://overthewire.org/wargames/bandit/). La connexion au premier challenge se réalise avec la ligne de commande `ssh bandit0@bandit.labs.overthewire.org -p 2220`

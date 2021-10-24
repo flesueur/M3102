@@ -13,8 +13,8 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 
 * S1 :
   * [CM1](cm1.md) Introduction "C'est quoi internet ?" et panorama du cours
-  * [TD1.1](td1.1.md) Wargame shell
-  * [TD1.2](td1.2.md) Découverte MI-LXC
+  * [TD1.1](td1.1-milxc.md) Découverte MI-LXC
+  * [TD1.2](td1.2-shell.md) Wargame shell
 * S2 :
   * CM2 Cryptographie et sécurité des communications (complément en ligne : [Section "Bases de la crypto"](https://github.com/flesueur/csc/blob/master/cours.md#bases-de-la-crypto))
   * TD2.1 Cryptogaphie JdR
