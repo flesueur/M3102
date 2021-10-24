@@ -160,7 +160,7 @@ Ce JSON définit :
 
 Une fois tout ceci fait, on peut faire `./mi-lxc.py print` pour vérifier que le JSON est bien formé et que la topologie est conforme. Un `./mi-lxc.py create` créera ce conteneur, puis `./mi-lxc.py start` le lancera (inutile d'avoir stoppé les autres avant).
 
-> Question 7 : Quel ajout avez-vous fait dans `local.json` ?
+> Question 7 : Quel contenu dans `local.json` ?
 
 
 Modification de cet hôte
