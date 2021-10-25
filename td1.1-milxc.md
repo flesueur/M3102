@@ -84,6 +84,8 @@ Le fichier `doc/MI-IANA.fr.txt` représente l'annuaire de l'IANA. Vous pouvez y 
 
 Vous pouvez aussi en profiter pour prévoir un nom de domaine en .milxc, qui sera utilisé lors d'une prochaine séance.
 
+**Faîtes valider ce plan par l'enseignant**
+
 
 Création de cet AS dans MI-LXC
 -----------------------------------
@@ -124,7 +126,7 @@ On peut enfin faire un `./mi-lxc.py start` et vérifier le bon démarrage.
 
 > Question 5 : Quel ajout avez-vous fait dans `global.json` ?
 
-> Question 6 : Quelles sont les sorties de `birdc show route all` et `birdc show protocols` de chaque côté de la connexion que vous avez rajoutée ?
+> Question 6 : Vérifiez les sorties de `birdc show route all` et `birdc show protocols` de chaque côté de la connexion que vous avez rajoutée. Dans protocols, tout doit être "Established". Mettez des screenshots des sorties "protocols" dans votre compte-rendu.
 
 
 Ajout d'un hôte dans le nouvel AS
@@ -166,7 +168,7 @@ Une fois tout ceci fait, on peut faire `./mi-lxc.py print` pour vérifier que le
 Modification de cet hôte
 -----------------------------
 
-Maintenant que cet hôte est créé, nous allons le modifier. Il s'agit d'une Debian basique sur laquelle il est donc possible d'ajouter des paquets, les configurer, etc. Installez le paquet nano et vérifiez son fonctionnement.
+Maintenant que cet hôte est créé, nous allons le modifier. Il s'agit d'une Debian basique sur laquelle il est donc possible d'ajouter des paquets, les configurer, etc. Installez le paquet nano et vérifiez son fonctionnement. Ouvrez enfin un display sur cette nouvelle machine et vérifiez que vous pouvez naviguer avec Firefox vers `http://www.target.milxc` et vers un site internet externe à MI-LXC.
 
 Enfin, vous pouvez éteindre proprement MI-LXC en tapant `./mi-lxc.py stop` et en arrêtant la VM (proprement également). Vos changements sont persistants : rallumez la VM, redémarrez MI-LXC et vérifiez que nano est toujours disponible sur votre nouvelle machine.
 
