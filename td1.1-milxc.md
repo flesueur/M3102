@@ -9,6 +9,9 @@ MI-LXC simule un internet minimaliste que nous utiliserons tout au long de la ma
 
 > La VM peut être affichée en plein écran. Si cela ne fonctionne pas, il faut parfois changer la taille de fenêtre manuellement, en tirant dans l'angle inférieur droit, pour que VirtualBox détecte que le redimensionnement automatique est disponible. Il y a une case adéquate (taille d'écran automatique) dans le menu écran qui doit être cochée. Si rien ne marche, c'est parfois en redémarrant la VM que cela peut se déclencher. Mais il *faut* la VM en grand écran.
 
+> Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import puis installer le paquet open-vm-tools-desktop dans la VM pour profiter du redimensionnement automatique du bureau (`apt install open-vm-tools-desktop` dans un shell).
+
+
 Cheat sheet
 ===========
 
@@ -40,7 +43,7 @@ Vous devez vous connecter à la VM en root/root. MI-LXC est déjà installé et 
 
 Au milieu du plan, le cœur de réseau est constitué de 2 opérateurs nommés transit-a et transit-b (munis chacun d'une machine et d'un switch). D'autres organisations sont ensuite connectées à ces opérateurs afin de former globalement cet internet. Ces organisations sont classiquement construites avec une machine <organisation>-router en entrée de réseau, un switch interne et d'autres machines branchées sur ce switch interne.
 
-> Question 1 : À partir de l'image de la topologie accessible [ici](https://github.com/flesueur/mi-lxc/blob/master/doc/topologie.png), délimitez les réseaux (les AS) et essayez de préciser leur rôle dans le système global.
+> Question 1 : À partir de l'image de la topologie accessible [ici](https://github.com/flesueur/mi-lxc/blob/master/doc/topologie.png), délimitez les réseaux (les AS) et essayez de préciser leur rôle dans le système global. Vous pouvez vous aider du listing présent dans le fichier `doc/MI-IANA.fr.txt`.
 
 
 Utilisation
@@ -59,10 +62,10 @@ Toutes les machines ont les deux comptes suivants : debian/debian et root/root (
 
 > Question 4 : Ouvrez un shell sur la machine target-dmz (commande attach, donc). Installez le package nano grâce à l'outil `apt` et vérfifiez que vous pouvez maintenant éditer des fichiers avec nano.
 
+> Dans la VM et sur les machines MI-LXC, vous pouvez donc installer des logiciels supplémentaires. Par défaut, vous avez mousepad pour éditer des fichiers de manière graphique.
 
 > Si la souris reste bloquée dans une fenêtre de display, appuyez sur CTRL+SHIFT pour la libérer. Un tuto vidéo de démarrage est proposé [ici](https://mi-lxc.citi-lab.fr/data/media/tuto.mp4).
 
-> Dans la VM et sur les machines MI-LXC, vous pouvez donc installer des logiciels supplémentaires. Par défaut, vous avez mousepad pour éditer des fichiers de manière graphique.
 
 
 Extension de l'infrastructure
@@ -86,6 +89,7 @@ Vous pouvez aussi en profiter pour prévoir un nom de domaine en .milxc, qui ser
 
 **Faîtes valider ce plan par l'enseignant**
 
+> Si vous n'êtes pas très à l'aise avec le choix de numéros d'AS et de plages d'IP, vous pouvez utiliser les paramètres de l'AS 9 "Evil" (cet AS n'est pas présent dans l'infrastructure fournie, ses paramètres sont donc libres).
 
 Création de cet AS dans MI-LXC
 -----------------------------------
@@ -112,7 +116,7 @@ Le champ _template_ décrit le template du groupe, ici ce sera également un as-
   * _transit-a_ est le bridge opéré par l'opérateur Transit-A, s'y connecter permet d'aller vers les autres AS, il faut utiliser une IP libre dans son réseau 100.64.0.40/24 et cette interface sera l'interface externe _eth0_
   * _milxc-lan_ est le bridge interne de votre nouvelle organisation, on y associe une IP de son AS. Son nom doit **impérativement** commencer par le nom du groupe + "-", ici "milxc-", et ne pas être trop long (max 15 caractères, contrainte de nommage des interfaces réseau niveau noyau)
 
-Pour intégrer votre nouvel AS, il faudra donc choisir à quel point de transit le connecter et avec quelle IP. Un `./mi-lxc.py print` vous donne une vue générale des connexions et IP utilisées (tant que le JSON est bien formé...). Il faut également déclarer ce nouveau pair de l'autre côté du tunnel BGP (ici, ce routeur du groupe "milxc" est par exemple listé dans les pairs BGP du groupe "transit-a").
+Pour intégrer votre nouvel AS, il faudra donc choisir à quel point de transit le connecter et avec quelle IP. Un `./mi-lxc.py print` vous donne une vue générale des connexions et IP utilisées (tant que le JSON est bien formé...). Il faut également déclarer ce nouveau pair de l'autre côté du tunnel BGP (ici, ce routeur du groupe "milxc" est par exemple listé dans les pairs BGP du groupe "transit-a", défini plus haut dans le fichier : il *faut* mettre à jour la liste des voisins de transit-a !).
 
 Une fois ceci défini, un `./mi-lxc.py print` pour vérifier la topologie, puis `./mi-lxc.py create` permet de créer la machine routeur associée à cet AS (ce sera un Alpine Linux). L'opération create est paresseuse, elle ne crée que les conteneurs non existants et sera donc rapide.
 
@@ -124,7 +128,7 @@ On peut enfin faire un `./mi-lxc.py start` et vérifier le bon démarrage.
 
 > Attention, pour des raisons de gestion des IP et des routes, étonnamment, il n'y a pas de façon simple pour que le routeur puisse lui-même initier des communications. C'est-à-dire que si tout fonctionne bien il sera démarré, aura de bonnes tables de routage, mais pour autant ne pourra pas ping en dehors du subnet du transitaire. C'est le comportement attendu et donc vérifier la connectivité du routeur ne peut pas se faire comme ça. On verra ensuite comment vérifier cela depuis un poste interne et nous utiliserons, sur le routeur ou ses voisins BGP, les commandes `birdc show route all` et `birdc show protocols` pour inspecter les tables de routage et vérifier l'établissement des sessions BGP.
 
-> Question 5 : Quel ajout avez-vous fait dans `global.json` ?
+> Question 5 : Quels ajouts avez-vous fait dans `global.json` ?
 
 > Question 6 : Vérifiez les sorties de `birdc show route all` et `birdc show protocols` de chaque côté de la connexion que vous avez rajoutée. Dans protocols, tout doit être "Established". Mettez des screenshots des sorties "protocols" dans votre compte-rendu.
 
