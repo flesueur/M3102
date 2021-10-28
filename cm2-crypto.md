@@ -20,15 +20,16 @@ Comment permettre à Alice et Bob de communiquer de manière *sûre* sur un cana
   * Attaquant sur le réseau local (attention aux LP Cyber qui jouent par là...)
   * ...
 * L'objectif de la crypto : communiquer de manière *sûre* sur un medium *non sûr*
+* Aujourd'hui, (très) peu de services réseau sans crypto
 
 
 Communiquer de manière sûre ?
 =============================
 
-1. Confidentialité : chiffrement
-2. Intégrité : signature/scellement
-3. Authentification : preuve de possession de matériel crypto
-4. Non-répudiation : signature
+1. **Confidentialité** : chiffrement
+2. **Intégrité** : signature/scellement
+3. **Authentification** : preuve de possession de matériel crypto
+4. **Non-répudiation** : signature
 
 
 La cryptographie moderne
