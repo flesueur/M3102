@@ -1,6 +1,7 @@
 TD2.1 : Usage de la cryptographie asymétrique
 =============================================
 
+_Pas de compte-rendu pour ce TD_
 
 Ce TD présente et applique les notions de cryptographie asymétrique :
 
@@ -23,10 +24,10 @@ Nous allons commencer par générer une paire de clés RSA pour chacun. Voici l'
 	* _1 < e < &phi;(n)_
 	* _pgcd(e, &phi;(n)) = 1_
 	* Par exemple, un premier qui ne divise pas &phi;(n)
-* Déterminer l'inverse modulaire _d &equiv; e<sup>-1</sup> mod &phi;(n)_. Vous pouvez utiliser [DCODE](https://www.dcode.fr/inverse-modulaire) pour cela (attention, pas le `pow` Python pour ça, sauf si vous êtes *certain* d'avoir python 3.8 !) <!-- Vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com), avec une requête de la forme `7 ^ -1 mod 1147` (attention, pas le `pow` Python pour ça !) -->
+* Déterminer l'inverse modulaire _d &equiv; e<sup>-1</sup> mod &phi;(n)_. Vous pouvez utiliser [DCODE](https://www.dcode.fr/inverse-modulaire) pour cela (attention, pas le `pow` Python pour ça, sauf si vous êtes *certain* d'avoir une version de python supérieure ou égale à 3.8 !) <!-- Vous pouvez utiliser [Wolfram Alpha](http://www.wolframalpha.com), avec une requête de la forme `7 ^ -1 mod 1147` (attention, pas le `pow` Python pour ça !) -->
 * La clé publique est _(e,n)_ et la clé privée est _(d,n)_
 
-Gardez votre clé privée secrète et transmettez votre clé publique à l'enseignant via un _message privé_ dans BBB. Elle sera inscrite dans le registre tenu par l'enseignant et affiché par BBB (la "PKI").
+Gardez votre clé privée secrète et transmettez votre clé publique avec votre nom à l'enseignant, sur un papier. Elle sera inscrite au tableau (la "PKI").
 
 Les exemples dans la suite du sujet sont réalisés avec p=31, q=37, n=1147, &phi;(n)=1080, e=7, d=463. La clé publique est _(e,n)_, ici _(7,1147)_, et la clé privée est _(d,n)_, ici _(463,1147)_.
 
@@ -52,6 +53,8 @@ Ensuite, afin de ne pas retomber dans un chiffrement par substitution simple, le
 
 Enfin, chaque bloc clair de 3 chiffres est chiffré indépendamment par la fonction RSA : bloc<sub>chiffré</sub> = bloc<sub>clair</sub><sup>e</sup>[n]. Attention, _(e,n)_ représente une clé publique, mais celle de qui ? L'utilisation de la clé _(7,1147)_ donne le chiffré `1116 751 245 1108`.
 
+> Attention, si vous utilisez python et non DCODE, lors de l'appel à la fonction `pow(a,b,c)` de python, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
+
 > Pour calculer les exponentiations modulaires, vous pouvez utiliser python (dans l'interpréteur, tapez `pow(a,b,c)` pour obtenir a<sup>b</sup>[c]) ou [DCODE](https://www.dcode.fr/exponentiation-modulaire)<!--[Wolfram Alpha](http://www.wolframalpha.com)-->. Attention, lors des calculs, n'écrivez pas de '0' en début d'entier. Par exemple, pour le bloc clair `031`, tapez `pow(31,7,1147)`. Commencer un entier par '0' le fait interpréter comme un nombre encodé en _octal_ (même principe qu'un nombre commençant par '0x' qui est interprété comme un hexadécimal).
 
 
@@ -60,12 +63,12 @@ Le déchiffrement est opéré de manière analogue, en utilisant la clé privée
 Mise en pratique
 ----------------
 
-Vous allez maintenant transmettre un message chiffré à un autre étudiant. Pour cette partie, contrairement aux explications en début de sujet, vous pouvez déposer ce message chiffré sur le chat du général et non en message privé : le chiffrement assure la _confidentialité_ du message transmis.
+Vous allez maintenant transmettre un message chiffré à un étudiant éloigné (en vous déplaçant). Le chiffrement assure la _confidentialité_ du message transmis. Imaginez qu'il serait normalement transmis par des routeurs intermédiaires, qui auraient pu être vos collègues, mais nous privilégions ici une transmission directe en raison des règles sanitaires.
 
-1. **Chiffrement de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé.
-2. **Envoi de votre message** : Écrivez le message chiffré dans le chat du BBB général.
-3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre pouvait-il obtenir le clair de ce message ?
+1. **Envoi de votre message** : Chiffrez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message chiffré et le destinataire. Envoyez-le !
+2. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de déchiffrement. Quelqu'un d'autre sur la route du message pouvait-il obtenir le clair de ce message ?
 
+<!-- 2. **Routage des autres messages** : Que fait un routeur ? Il lit un message, l'analyse, décide où l'envoyer puis le reproduit. De manière analogue, vous allez pour chaque saut retransmettre le message entrant mais vous pouvez le lire avant de le retransmettre. Pouvez-vous en déduire des informations ? -->
 
 Signature et vérification
 =========================
@@ -94,14 +97,15 @@ Le message est alors envoyé accompagné de sa signature. La vérification d'un 
 Mise en pratique
 ----------------
 
-Vous allez maintenant transmettre un message clair (non chiffré) signé à un autre étudiant, par message privé. La signature permet de vérifier l'_intégrité_ du message transmis.
+Vous allez maintenant transmettre un message clair (non chiffré) signé à un étudiant éloigné. La signature permet de vérifier l'_intégrité_ du message transmis. Imaginez qu'il serait normalement transmis par des routeurs intermédiaires, qui auraient pu être vos collègues, mais nous privilégions ici une transmission directe en raison des règles sanitaires.
 
-1. **Signature de votre message** : Signez un message de votre choix avec le cryptosystème proposé.
-1. **Envoi de votre message** : Écrivez le message par message privé (attention, il faut bien envoyer le message en clair + la signature !)
-3. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de vérification de la signature. Le message reçu est-il intègre ? Si non, quelle attaque avez-vous détectée ?
+1. **Envoi de votre message** : Signez un message de votre choix avec le cryptosystème proposé. Inscrivez sur un papier votre identité, le message clair, la signature et le destinataire. Envoyez-le !
+2. **Réception d'un message** : À la réception d'un message, appliquez l'algorithme de vérification de la signature. Le message reçu est-il intègre ? Si non, quelle attaque avez-vous détectée ? Un attaquant pouvait-il l'altérer en chemin ?
+
+<!-- 2. **Routage des autres messages** : Utilisez le même protocole multi-saut que précédemment. Pour chaque saut, recopiez le message entrant sur un autre papier puis retransmettez ce second papier. -->
 
 
-Attaques sur le cryptosystème proposé
+Bonus : Attaques sur le cryptosystème proposé
 =====================================
 
 Étudiez et testez quelques attaques sur le système mis en place :
@@ -111,3 +115,5 @@ Attaques sur le cryptosystème proposé
 
 
 Toutes ces attaques sont possibles ici. Réfléchissez à leur cause et aux protections mises en place dans les cryptosystèmes réels. Implémentez une (ou plusieurs) attaque dans le langage de votre choix, proposez une contre-mesure et évaluez la complexité rajoutée par votre contre-mesure.
+
+!(Don't roll your own crypto)[https://image.slidesharecdn.com/signal-publickeycrypto-181018000453/95/signal-practical-cryptography-40-638.jpg?cb=1539821143]
