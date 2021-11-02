@@ -36,17 +36,20 @@ La cryptographie moderne
 ========================
 
 La cryptographie asymétrique :
+
 * Chaque acteur a une paire de clés publique/privée reliées mathématiquement
 * Chiffrer = utiliser la clé publique de l'interlocuteur, déchiffrer = utiliser sa propre clé privée (tout le monde peut nous parler, nous seuls pouvons comprendre)
 * Signer = utiliser sa propre clé privée, vérifier = utiliser la clé publique de l'interlocuteur (nous seuls pouvons signer, tout le monde peut vérifier)
 * Exemples : RSA, ECDSA
 
 La cryptographie symétrique :
+
 * Chaque paire d'acteurs a une clé secrète
 * Cette clé secrète est utiliser pour chiffrer/déchiffrer et sceller/vérifier
 * Exemple : AES, HMAC
 
 Le hachage :
+
 * Empreinte de taille fixe à sens unique (non inversible)
 * Hachage crypto doit être robuste aux attaques (collision, pré-images)
 * Exemples SHA-256, SHA3-512
