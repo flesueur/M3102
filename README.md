@@ -18,7 +18,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 * S2 :
   * [CM2](cm2-crypto.md) Cryptographie et sécurité des communications (complément en ligne : [Section "Bases de la crypto"](https://github.com/flesueur/csc/blob/master/cours.md#bases-de-la-crypto))
   * [TD2.1](td2.1-crypto.md) Cryptographie JdR
-  * TD2.2 Apache/CMS
+  * [TD2.2](td2.2-apache.md) Apache/CMS
 * S3 :
   * CM3 DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
   * TD3.1 DNS(SEC)
