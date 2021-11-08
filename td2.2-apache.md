@@ -34,22 +34,22 @@ Vous allez étudier une pile serveur LAMP :
 * MariaDB (MySQL)
 * PHP
 
-> Question 1 : Sur quel serveur allez-vous installer/configurer ces logiciels ? Depuis quelle machine et comment allez-vous tester l'utilisation en tant que client ? Quelles sont les adresses IP de ces deux machines ?
+> Question 1 : Sur quel serveur allez-vous installer/configurer cette pile LAMP ? Depuis quelle machine et comment allez-vous tester l'utilisation en tant que client ? Quelles sont les adresses IP de ces deux machines ?
 
 
 Apache - Serveur HTTP
 =====================
 
-Un serveur Apache est déjà installé par défaut. Validez que la connexion fonctionne avec Firefox depuis le client.
+Un serveur Apache est déjà installé par défaut. Validez que la connexion à l'Apache du serveur retenu dans la question 1 fonctionne bien avec Firefox depuis le poste client choisi.
 
 Wireshark
 ---------
 
-Étudiez la connexion avec Wireshark depuis le poste client (en session graphique "display"). Il faut être root pour lancer wireshark (donc "su" dans le terminal graphique sur le bureau du client avant de lancer wireshark. Attention à faire juste "su" et non "su -" !). Dans wireshark, vous pouvez utiliser le filtre "http" pour n'afficher que ce qui a trait au HTTP.
+Étudiez la connexion avec Wireshark depuis le poste client (en session graphique "display"). Il faut être root pour lancer wireshark (donc "su" dans le terminal graphique sur le bureau du client avant de lancer wireshark. Attention à faire juste "su" et non "su -" !). Dans wireshark, lancez la capture sur eth0, puis vous pouvez utiliser le filtre "http" pour n'afficher que ce qui a trait au HTTP.
 
-> Question 2 : Décrivez la connexion HTTP entre le client et le serveur
+> Question 2 : Décrivez en quelques lignes la connexion HTTP entre le client et le serveur (les quelques échanges ou une capture d'écran de la zone wireshark montrant cet échange)
 
-Connectez-vous ensuite avec deux clients en ligne de commande (cherchez sur internet comment faire) :
+Connectez-vous ensuite avec deux logiciels clients en ligne de commande (cherchez sur internet comment faire) :
 
 * curl ou wget d'une part
 * netcat (binaire "nc", à lancer avec l'option -C) d'autre part
@@ -74,7 +74,7 @@ Vous devez tout d'abord créer un fichier `.htpasswd` qui va contenir les couple
 
 > Question 4 : Quelles commandes avez-vous tapées ? Quel est votre fichier .htpasswd résultat ?
 
-Vous devez ensuite spécifier quel dossier doit être protégé. Vous trouverez le nécessaire dans la [documentation officielle](https://httpd.apache.org/docs/2.4/fr/howto/auth.html), à parcourir jusqu'à la section "Autorisation d'accès à plusieurs personnes" (incluse). Validez enfin le fonctionnement en vérifiant que l'authentification est bien demandée au client.
+Vous devez ensuite spécifier quel dossier doit être protégé. Vous trouverez le nécessaire dans la [documentation officielle](https://httpd.apache.org/docs/2.4/fr/howto/auth.html), à parcourir jusqu'à la section "Autorisation d'accès à plusieurs personnes" (incluse). Lisez attentivement la partie sur les prérequis, votre fichier de configuration apache2 est `/etc/apache2/apache2.conf` (et non `httpd.conf` comme mentionné à certains endroits de cette documentation). Validez enfin le fonctionnement en vérifiant que l'authentification est bien demandée au client lors d'une connexion graphique avec Firefox.
 
 > Question 5 : Quelles modifications/ajouts avez-vous fait ?
 
