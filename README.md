@@ -20,7 +20,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
   * [TD2.1](td2.1-crypto.md) Cryptographie JdR
   * [TD2.2](td2.2-apache.md) Apache/CMS
 * S3 :
-  * CM3 DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
+  * [CM3](cm3-dns.md) DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
   * TD3.1 DNS(SEC)
   * TD3.2 CA ACME
 * S4 :
