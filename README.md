@@ -6,7 +6,7 @@ Cette page recense les séances du module M3102 "Services réseaux". L'objectif 
 
 Ce module se situe entre M2102 (Couches OSI, de la modulation à IP, avec un peu de routage/adressage IP) et M4101C. Il dure 6 semaines, avec chaque semaine 1 séance de cours (1h30) et 2 séances de TD (2*1h30) (attention, pour des raisons d'edt, la séance de cours a en fait lieu à la fin de la semaine précédent les TD). Le contenu sera détaillé au fur et à mesure de la période.
 
-Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (https://github.com/flesueur/mi-lxc), pour laquelle il faudra télécharger une VM Virtualbox **avant** le TD1.1 "Découverte de MI-LXC" : [.ova à télécharger ici](https://filesender.renater.fr/?s=download&token=2ca6036b-49b8-4b4c-93bb-95c5de051400). Il faudra arriver en séance avec Virtualbox installé et le .ova de MI-LXC déjà téléchargé, l'installation et la découverte de la VM seront ensuite le programme de la séance TD1.2.
+Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (https://github.com/flesueur/mi-lxc), pour laquelle il faudra télécharger une VM Virtualbox **avant** le TD1.1 "Découverte de MI-LXC" : [.ova à télécharger ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Il faudra arriver en séance avec Virtualbox installé et le .ova de MI-LXC déjà téléchargé, l'installation et la découverte de la VM seront ensuite le programme de la séance TD1.1.
 
 
 ## Programme
