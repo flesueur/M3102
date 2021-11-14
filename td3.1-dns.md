@@ -152,4 +152,6 @@ Validez le fonctionnement avec dig depuis `isp-a-home`. Lorsque tout fonctionne,
 
 > Question 8 : Recopiez votre fichier de zone `iutva.milxc.zone` dans votre compte-rendu.
 
+> Question 9 (bonus) : Afin d'obtenir un système robuste et conforme aux recommandations standards, il faudrait ensuite dupliquer cette zone sur un serveur secondaire, indépendant, qui serait aussi annoncé dans la zone parente .milxc (par exemple sur target-infra). Explorez cela et rédigez ce que vous aurez compris ou réalisé.
+
 **Votre compte-rendu doit être déposé sur Moodle en fin de journée au format PDF uniquement, un dépôt par binôme.**
