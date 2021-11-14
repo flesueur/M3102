@@ -21,8 +21,8 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
   * [TD2.2](td2.2-apache.md) Apache/CMS
 * S3 :
   * [CM3](cm3-dns.md) DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
-  * TD3.1 DNS(SEC)
-  * TD3.2 CA ACME
+  * [TD3.1](td3.1-dns.md) DNS
+<!--  * TD3.2 CA ACME -->
 * S4 :
   * CM4 Mail (complément en ligne : [B. Sonntag](https://www.iletaitunefoisinternet.fr/post/7-email-sonntag/))
   * TD4.1 SMTP, POP, IMAP
