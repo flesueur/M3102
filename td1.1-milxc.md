@@ -1,7 +1,7 @@
 TD1.1 Découverte MI-LXC
 =======================
 
-Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2ca6036b-49b8-4b4c-93bb-95c5de051400). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
 
 MI-LXC simule un internet minimaliste que nous utiliserons tout au long de la matière. Ce TD couvre la découverte de l'environnement existant et les premiers éléments qui seront nécessaires pour l'étendre par la suite. Dans la suite de la matière, vous installerez et configurerez un réseau et des services qui s'interconnecteront avec cet existant.
 
