@@ -119,7 +119,7 @@ Vous allez d'abord simuler l'enregistrement du domaine "iutva.milxc". Vous jouer
 
 > Question 6 : Dans quelle zone va devoir être réalisé cet enregistrement du _domaine_ iutva.milxc ? Sur quelle machine ? Faîtes valider ce point.
 
-Connectez-vous sur cette machine et éditez le fichier de zone pour ajouter ce "iutva.milxc". Inspirez-vous évidemment des modèles déjà présents dans ce fichier, en mettant à jour les adresses IP pour pointer vers la machine sur laquelle vous hébergerez la zone "iutva.milxc" : la machine `iutva-infra`. Enfin, relancez le serveur NSD, en root : `service nsd restart`, assurez-vous qu'il n'y a pas d'erreur signalée.
+Connectez-vous sur cette machine et éditez le fichier de zone pour ajouter ce "iutva.milxc". Inspirez-vous évidemment des modèles déjà présents dans ce fichier, en mettant à jour les adresses IP pour pointer vers la machine sur laquelle vous hébergerez la zone "iutva.milxc" : la machine `iutva-infra`. Enfin, relancez le serveur NSD (en root : `service nsd restart`) et assurez-vous qu'il n'y a pas d'erreur signalée dans les logs (`journalctl -xe`).
 
 Avec dig depuis la machine `isp-a-home`, vérifiez que le serveur répond bien la réponse attendue pour "iutva.milxc".
 
@@ -148,7 +148,7 @@ Dans `iutva.milxc.zone`, vous déclarez le contenu de la zone. Vous trouverez un
 * un champ A pour le nom "infra.iutva.milxc" pointant vers l'IP de la machine `iutva-infra`
 * un champ CNAME pour le nom "www.iutva.milxc" comme alias vers "infra.iutva.milxc"
 
-Validez le fonctionnement avec dig depuis `isp-a-home`. Lorsque tout fonctionne, vous devez pouvoir vous connecter à l'URL "http://www.iutva.milxc" avec Firefox depuis la machine `isp-a-home` (si vous avez bien installé le serveur web sur `iutva-infra`...)
+Relancez le serveur NSD et vérifiez l'absence d'erreurs dans les logs (`journalctl -xe`). Validez le fonctionnement avec dig depuis `isp-a-home`. Lorsque tout fonctionne, vous devez pouvoir vous connecter à l'URL "http://www.iutva.milxc" avec Firefox depuis la machine `isp-a-home` (si vous avez bien installé le serveur web sur `iutva-infra`...)
 
 > Question 8 : Recopiez votre fichier de zone `iutva.milxc.zone` dans votre compte-rendu.
 
