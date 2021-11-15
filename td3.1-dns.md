@@ -117,7 +117,7 @@ Ajout d'un nouveau domaine
 
 Vous allez d'abord simuler l'enregistrement du domaine "iutva.milxc". Vous jouerez ici le rôle du registry.
 
-> Question 6 : Dans quelle zone va devoir être réalisé cet enregistrement du _domaine_ iutva.milxc ? Sur quelle machine ? Faîtes valider ce point.
+> Question 6 : Dans quelle zone va devoir être réalisé cet enregistrement du _domaine_ iutva.milxc ? Sur quelle machine ? Aidez-vous de vos réponses aux questions 2 et 3 (iutva.milxc va prendre une place similaire à target.milxc) et faîtes valider ce point.
 
 Connectez-vous sur cette machine et éditez le fichier de zone pour ajouter ce "iutva.milxc". Inspirez-vous évidemment des modèles déjà présents dans ce fichier, en mettant à jour les adresses IP pour pointer vers la machine sur laquelle vous hébergerez la zone "iutva.milxc" : la machine `iutva-infra`. Enfin, relancez le serveur NSD (en root : `service nsd restart`) et assurez-vous qu'il n'y a pas d'erreur signalée dans les logs (`journalctl -xe`).
 
