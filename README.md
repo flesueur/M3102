@@ -24,7 +24,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
   * [TD3.1](td3.1-dns.md) DNS
 <!--  * TD3.2 CA ACME -->
 * S4 :
-  * CM4 Mail (complément en ligne : [B. Sonntag](https://www.iletaitunefoisinternet.fr/post/7-email-sonntag/))
+  * [CM4](cm4-mail.md) Mail (complément en ligne : [B. Sonntag](https://www.iletaitunefoisinternet.fr/post/7-email-sonntag/))
   * TD4.1 SMTP, POP, IMAP
   * TD4.2 SPF, DKIM, Spam, webmail
 * S5 :
