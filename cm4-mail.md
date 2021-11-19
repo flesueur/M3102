@@ -52,8 +52,8 @@ SMTP : deux rôles, un (presque) même protocole :
 Consultation
 ------------
 
-* IMAP : Protocole de consultation avec stockage et organisation côté serveur
-* POP : Protocole de consultation avec stockage et organisation côté client (et suppression côté serveur)
+* IMAP : Protocole de consultation avec stockage et organisation côté serveur, port 143 (clair + STARTTLS) ou 993 (TLS)
+* POP : Protocole de consultation avec stockage et organisation côté client (et suppression côté serveur), port 110 (clair + STARTTLS) ou 995 (TLS)
 
 
 Architecture
