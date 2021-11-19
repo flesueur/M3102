@@ -41,7 +41,7 @@ Envoi
 SMTP : deux rôles, un (presque) même protocole :
 
 * Submission agent
-  * TCP, écoute sur 587 (clair), 465 (TLS)
+  * TCP, écoute sur 587 (clair + STARTTLS), 465 (TLS)
   * Reçoit les mails depuis un client MUA
   * Les transfère au MTA
 * Transfer agent
