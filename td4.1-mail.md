@@ -58,46 +58,34 @@ Pour cela, le contenu de votre fichier `groups/iutva/local.json` peut devenir :
     "infra": {
       "container": "infra",
       "interfaces": [
-        {
-          "bridge": "lan", "ipv4": "100.90.0.2/16", "ipv6": "2001:db8:90::2/48"
-        }
+        {"bridge": "lan", "ipv4": "100.90.0.2/16", "ipv6": "2001:db8:90::2/48"}
       ],
       "gatewayv4": "100.90.0.1",
       "gatewayv6": "2001:db8:90::1",
       "templates": [
-        {
-          "template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"
-        }
+        {"template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"}
       ]
     },
     "mail": {
       "container": "mail",
       "interfaces": [
-        {
-          "bridge": "lan", "ipv4": "100.90.0.3/16", "ipv6": "2001:db8:90::3/48"
-        }
+        {"bridge": "lan", "ipv4": "100.90.0.3/16", "ipv6": "2001:db8:90::3/48"}
       ],
       "gatewayv4": "100.90.0.1",
       "gatewayv6": "2001:db8:90::1",
       "templates": [
-        {
-          "template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"
-        }
+        {"template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"}
       ]
     },
     "poste": {
       "container": "poste",
       "interfaces": [
-        {
-          "bridge": "lan", "ipv4": "100.90.0.4/16", "ipv6": "2001:db8:90::4/48"
-        }
+        {"bridge": "lan", "ipv4": "100.90.0.4/16", "ipv6": "2001:db8:90::4/48"}
       ],
       "gatewayv4": "100.90.0.1",
       "gatewayv6": "2001:db8:90::1",
       "templates": [
-        {
-          "template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"
-        }
+        {"template": "nodhcp", "domain": "iutva.milxc", "ns": "100.100.100.100"}
       ]
     }
   }
