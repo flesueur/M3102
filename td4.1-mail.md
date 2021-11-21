@@ -70,7 +70,7 @@ Pour cela, le contenu de votre fichier `groups/iutva/local.json` peut devenir :
         }
       ]
     },
-	"mail": {
+    "mail": {
       "container": "mail",
       "interfaces": [
         {
@@ -85,7 +85,7 @@ Pour cela, le contenu de votre fichier `groups/iutva/local.json` peut devenir :
         }
       ]
     },
-	"poste": {
+    "poste": {
       "container": "poste",
       "interfaces": [
         {
