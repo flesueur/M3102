@@ -42,7 +42,7 @@ En dehors de MI-LXC, ouvrez un mail quelconque sur une de vos boîtes mails pers
 Installation et configuration d'un système de mail (1h45)
 ============================================================
 
-Architecture
+Architecture (20 minutes)
 ------------
 
 Dans votre organisation "iutva", vous allez ajouter 2 machines supplémentaires :
@@ -125,7 +125,7 @@ Petit résumé :
 
 > Question 2 : Faîtes un schéma global (capture de `./mi-lxc.py print` ou juste les machines impliquées) inventoriant les 5 machines iutva-poste, iutva-mail, iutva-infra, target-dmz, target-commercial, leurs adresses IPv4, leurs noms DNS (déjà existants ou à configurer par la suite) et leur rôle dans le système de mail.
 
-SMTP
+SMTP (50 minutes)
 ----
 
 ### Installation
@@ -176,7 +176,7 @@ Enfin, retrouvez la trace de ce mail dans les logs sur iutva-mail. Une fois arri
 
 > Une documentation assez complète pour un déploiement complet et sain est proposée sur le [Wiki Debian](https://wiki.debian.org/Postfix).
 
-IMAP
+IMAP (15 minutes)
 ----
 
 Toujours sur iutva-mail, installez dovecot-imapd : `apt install dovecot-imapd`
@@ -193,7 +193,7 @@ Vous verrez normalement ainsi le contenu du mail précédemment envoyé.
 > Question 7 : Faîtes une copie de votre session netcat.
 
 
-Client
+Client (20 minutes)
 ------
 
 Nous allons maintenant installer et configurer un client mail sur la machine iutva-poste. En graphique : `./mi-lxc.py display iutva-poste`
