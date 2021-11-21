@@ -25,16 +25,15 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 <!--  * TD3.2 CA ACME -->
 * S4 :
   * [CM4](cm4-mail.md) Mail (complément en ligne : [B. Sonntag](https://www.iletaitunefoisinternet.fr/post/7-email-sonntag/))
-  * TD4.1 SMTP, POP, IMAP
-  * TD4.2 SPF, DKIM, Spam, webmail
+  * [TD4.1](td4.1-mail.md) SMTP, POP, IMAP
+<!--  * TD4.2 SPF, DKIM, Spam, webmail -->
 * S5 :
   * CM5 Firewall (complément en ligne : [Filtrage et surveillance réseau](https://github.com/flesueur/srs/blob/master/cm3-filtrage.md))
   * TD5.1 IPTables
   * TD5.2 Architecture réseau
 * S6 :
-  * CM6 Administration centralisée
-  * TD6.1 DHCP
-  * TD6.2 SSH, Ansible
+  * CM6 Révisions, questions/réponses
+  * TD6.1 Révisions
 
 ## Pour les curieux
 
