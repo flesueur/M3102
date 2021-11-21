@@ -37,7 +37,6 @@ En dehors de MI-LXC, ouvrez un mail quelconque sur une de vos boîtes mails pers
 > 2. Décrivez les en-têtes qui vous paraissent clairs et transparents.
 > 3. Les en-têtes `Received:`, ajoutés par chaque serveur intermédiaire, permettent de retracer le chemin du mail. Dans quel sens ce chemin est-il décrit ?
 > 4. Décrivez le chemin de votre mail en analysant les adresses IP : où a lieu chaque étape ? Vous pouvez utiliser `dig -x 1.2.3.4` pour obtenir le DNS inversé de l'IP 1.2.3.4, ou des sites comme [https://ipinfo.io/](https://ipinfo.io/), [https://www.onyphe.io/](https://www.onyphe.io/) ou [https://www.ipinfodb.com/](https://www.ipinfodb.com/) pour obtenir des informations supplémentaires sur les adresses IP. Lorsque les adresses IP sont de type local, locales à quelle organisation ?
-> 5. Documentez-vous pour comprendre et décrire certains autres en-têtes pendant le temps restant
 
 
 Installation et configuration d'un système de mail (1h45)
@@ -141,9 +140,9 @@ Depuis un shell sur la machine iutva-mail, nous allons envoyer un mail à l'adre
 
 Ensuite, vous aurez à taper les textes suivants (sans les guillemets, entrée après chaque commande) :
 
-* "HELO <identifiant>" : message de présentation, par exemple "HELO iutva.milxc"
-* "MAIL FROM: <adresse d'expéditeur>" : spécifie l'adresse d'expédition, par exemple "MAIL FROM: debian@iutva.milxc"
-* "RCPT TO: <adresse du destinataire>" : spécifie l'adresse du destinataire, par exemple "RCPT TO: commercial@target.milxc"
+* "HELO" : message de présentation, par exemple "HELO iutva.milxc"
+* "MAIL FROM: " : spécifie l'adresse d'expédition, par exemple "MAIL FROM: debian@iutva.milxc"
+* "RCPT TO: " : spécifie l'adresse du destinataire, par exemple "RCPT TO: commercial@target.milxc"
 * "DATA" : annonce le contenu du message ensuite
 * Après avoir entré la commande DATA (+ entrée), tapez votre texte. C'est au début de ce texte qu'iraient les champs (non strictement nécessaires ici) From, To, Subject tels que vus dans les en-têtes à la question 1, puis le contenu du mail
 * En fin de mail, un "." seul sur une ligne, puis encore entrée pour valider la fin du message
@@ -215,7 +214,7 @@ Un peu de Wireshark (30 minutes)
 
 Certaines communications passent en clair ici. Pour un vrai déploiement, il faudrait évidemment chiffrer toutes les communications avec des certificats valides, mais nous pouvons du coup observer le protocole.
 
-> Question 9 : Trouvez où et comment lancer des wireshark pour observer, lors d'un mail envoyé depuis target-commercial vers l'adresse debian@iutva.milxc qui sera relevée sur iutva-poste : l'envoi depuis claws-mail, l'échange entre les SMTP, la relève par claws-mail. Décrivez les points de capture, intégrez des screenshots de vos captures, précisez les communications claires ou chiffrées.
+> Question 9 : Proposez où lancer des wireshark pour observer, lors d'un mail envoyé depuis target-commercial vers l'adresse debian@iutva.milxc qui sera relevée sur iutva-poste : l'envoi depuis claws-mail, l'échange entre les SMTP, la relève par claws-mail. Décrivez les points de capture, intégrez des screenshots de vos captures, précisez les communications claires ou chiffrées.
 
 > Question 10 : Avez-vous selon vous un "bon" certificat sur le SMTP de iutva-mail ? Qu'en déduire sur la sécurité de l'échange entre target-dmz et iutva-mail ? En notant que ceci est bien le comportement par défaut lors de l'installation.
 
