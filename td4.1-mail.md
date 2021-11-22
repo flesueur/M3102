@@ -111,7 +111,7 @@ Petit résumé :
 
 **Attention ! La connexion à target-commercial se fait avec commercial@target-commercial (et non target-commercial tout court) afin de se connecter avec l'utilisateur local commercial, qui est celui pour lequel le mail est pré-configuré.**
 
-> Question 2 : Faîtes un schéma global (capture de `./mi-lxc.py print` ou juste les machines impliquées) inventoriant les 5 machines iutva-poste, iutva-mail, iutva-infra, target-dmz, target-commercial, leurs adresses IPv4, leurs noms DNS (déjà existants ou à configurer par la suite) et leur rôle dans le système de mail.
+> Question 2 : Faîtes un schéma global (capture de `./mi-lxc.py print` ou juste les machines impliquées) inventoriant les 5 machines iutva-poste, iutva-mail, iutva-infra, target-dmz, target-commercial, leurs adresses IPv4, leurs noms DNS (déjà existants ou à configurer par la suite) et leur rôle dans le système de mail. Pour la partie Target, vous pouvez vous aider de l'extrait de la zone DNS de Target dans le [cours DNS](https://git.kaz.bzh/francois.lesueur/M3102/src/branch/master/cm3-dns.md#exemple-de-zone-dns).
 
 SMTP (50 minutes)
 ----
