@@ -29,7 +29,7 @@ Rappel: Vous devez être dans le répertoire `/root/mi-lxc/` pour exécuter ces 
 Observation d'un mail (45 minutes)
 =====================
 
-En dehors de MI-LXC, ouvrez un mail quelconque sur une de vos boîtes mails personnelles. Affichez le code source de ce mail (souvent accessible par clic droit puis "Afficher le source", ou Ctrl+u) et analysez le résultat. Vous y trouverez une partie d'en-têtes (au format `Mot-clé: Valeur`) et une partie contenu.
+En dehors de MI-LXC, ouvrez un mail quelconque sur une de vos boîtes mails personnelles. Affichez le code source de ce mail (souvent accessible par clic droit puis "Montrer l'original" (zimbra) ou "Afficher le source", ou Ctrl+u) et analysez le résultat. Vous y trouverez une partie d'en-têtes (au format `Mot-clé: Valeur`, en début de source) puis une partie contenu.
 
 > Question 1 : Sur ce mail :
 >
@@ -148,7 +148,7 @@ Sur la machine iutva-mail, affichez les logs de Postfix qui sont dans le fichier
 
 ### Réception d'un mail par iutva-mail
 
-Depuis le display de target-commercial, envoyez un mail à "debian@iutva.milxc". Vous constaterez une erreur (un mail d'erreur qui arrive dans la boîte de réception de target-commercial). En effet, le serveur SMTP côté Target ne sait pas trouver le serveur SMTP pour @iutva.milxc.
+Depuis le display de target-commercial, envoyez un mail à "debian@iutva.milxc". Vous constaterez a priori une erreur (un mail d'erreur qui arrive dans la boîte de réception de target-commercial); si vous ne recevez pas d'erreur explicite (dépendant d'éléments de configuration de votre côté), le mail est en fait toujours en tampon sur le serveur SMTP du côté de l'organisation Target, et donc non livré. En effet, le serveur SMTP côté Target ne sait pas trouver le serveur SMTP pour @iutva.milxc.
 
 Ajoutez maintenant le champ MX adapté dans la zone DNS de iutva. Ce champ MX doit être situé avant les champs CNAME/A déjà existants dans la zone et doit mentionner un nom (pas une IP) qui sera défini par un champ A ou CNAME ensuite. Reprenez l'exemple du cours DNS [ici](https://git.kaz.bzh/francois.lesueur/M3102/src/branch/master/cm3-dns.md#exemple-de-zone-dns), mettez à jour votre zone sur iutva-infra puis redémarrez le serveur NSD.
 
