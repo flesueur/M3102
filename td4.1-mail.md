@@ -3,7 +3,7 @@ TD4.1 Mail (3 heures)
 
 _Compte-rendu à préparer et déposer en binôme_
 
-> Si vous n'aviez pas validé le TP précédent (DNS) avez besoin de repartir d'une base DNS fonctionnelle, vous trouverez les fichiers et explications nécessaires sur Moodle.
+> Si vous n'aviez pas validé le TP précédent (DNS) et avez besoin de repartir d'une base DNS fonctionnelle, vous trouverez les fichiers et explications nécessaires sur Moodle.
 
 Ce TD couvre la configuration et l'utilisation du mail, côté client et serveur. Les interactions sont complexes, l'objectif n'est pas d'avoir absolument un système mail entièrement fonctionnel, mais plutôt de bien appréhender la construction générale de ce type de système. Soyez méthodiques dans votre travail car vous allez manipuler de nombreuses perspectives différentes !
 
