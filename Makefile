@@ -12,16 +12,14 @@ html: $(HTML)
 
 directories: $(OUTDIR)
 
-$(OUTDIR): 
+$(OUTDIR):
 	mkdir $(OUTDIR)
 
 $(OUTDIR)/%.html: %.md $(OUTDIR)
-	pandoc $< -o $@ -s
+	pandoc --from=markdown+lists_without_preceding_blankline $< -o $@ -s
 
 $(OUTDIR)/%.pdf: $(OUTDIR)/%.html
 	wkhtmltopdf $< $@
 
 clean:
 	\rm -rf *.html *.pdf $(OUTDIR)
-
-
