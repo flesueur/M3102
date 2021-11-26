@@ -3,6 +3,8 @@ TD4.1 Mail (3 heures)
 
 _Compte-rendu à préparer et déposer en binôme_
 
+> Si vous n'aviez pas validé le TP précédent (DNS) avez besoin de repartir d'une base DNS fonctionnelle, vous trouverez les fichiers et explications nécessaires sur Moodle.
+
 Ce TD couvre la configuration et l'utilisation du mail, côté client et serveur. Les interactions sont complexes, l'objectif n'est pas d'avoir absolument un système mail entièrement fonctionnel, mais plutôt de bien appréhender la construction générale de ce type de système. Soyez méthodiques dans votre travail car vous allez manipuler de nombreuses perspectives différentes !
 
 Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
