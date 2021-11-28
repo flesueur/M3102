@@ -170,14 +170,14 @@ L'objectif d'une politique de sécurité réseau est de limiter les services acc
 > |   int      |    tout            |        X                     |
 
 
-Pour rappel, le réseau de l'entreprise est composé de ces différents éléments:
+Pour rappel, le réseau de l'entreprise est composé de ces différents éléments :
 
 | Machine           | Description |
 | :-------:         | ----------- |
 | target-router     | Routeur     |
 | target-admin      | Ordinateur de l'administrateur système. Il doit pouvoir administrer tout le parc en SSH. |
-| target-commercial | Ordinateur du commercial. Il doit pouvoir accéder à l'intranet (site web sur target-intranet). |
-| target-dev        | Ordinateur du développeur. Il doit pouvoir mettre à jour l'intranet par SSH sur target-intranet. |
+| target-commercial | Ordinateur du commercial. Il doit pouvoir envoyer des mails, accéder à l'intranet (site web sur target-intranet) et naviguer sur le web. |
+| target-dev        | Ordinateur du développeur. Il doit pouvoir envoyer des mails, mettre à jour l'intranet par SSH sur target-intranet et naviguer sur le web. |
 | target-dmz        | Ensemble de services à l'interface entre le SI et le reste du monde (DNS, SMTP, IMAP, HTTP) |
 | target-ldap       | Authentification centralisée, nécessaire à tous les postes du SI (dont la DMZ), en LDAP (logiciel slapd) |
 | target-filer      | Partage de fichiers qui doit être accessible à tous les postes clients internes (partage en SSH) |
