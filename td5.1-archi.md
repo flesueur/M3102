@@ -193,11 +193,11 @@ Votre description (matrice de flux sous forme tabulaire avec les machines source
 
 Implémentation
 --------------
-Une fois que la politique réseau a été précédemment définie sur le papier (phase de spécification), nous pouvons passer à l'implémentation dans les routeurs (sous-réseaux) et pare-feu (règles de filtrage).
+Une fois que la politique réseau a été précédemment définie sur le papier (phase de spécification), nous pouvons passer à l'implémentation dans les routeurs (sous-réseaux) et pares-feux (règles de filtrage).
 
 Implémentez votre matrice de flux sur la machine "target-router". Vous aurez besoin de procéder en deux étapes :
 
-* Segmenter le réseau "target" (**Prenez le temps de regarder le [tuto vidéo](https://videos.insa-lyon.net/videos/?video=MEDIA200930133112139) !!!**) :
+* Segmenter le réseau "target" (**Prenez le temps de regarder le [tuto vidéo](https://mi-lxc.citi-lab.fr/data/media/segmentation_milxc.mp4) !!!**) :
 	* Éditer `global.json` (dans le dossier mi-lxc) pour spécifier les interfaces sur le routeur, dans la section "target". Il faut ajouter des bridges (dont le nom doit commencer par "target-") et découper l'espace 100.80.0.1/16. Enfin, il faut ajouter les interfaces eth2, eth3... ainsi créées à la liste des `asdev` definie juste au-dessus (avec des ';' de séparation entre interfaces)
 	* Éditer `groups/target/local.json` pour modifier les adresses des interfaces et les bridges des machines internes (attention, pour un bridge nommé précédemment "target-dmz", il faut simplement écrire "dmz" ici, la partie "target-" est ajoutée automatiquement). Dans le même fichier vous devrez aussi mettre à jour les serveurs mentionnés dans les paramètres des templates "ldapclient", "sshfs" et "nodhcp", soit en remplaçant les noms de serveurs par leurs nouvelles adresses IP, soit en mettant à jour les enregistrements DNS correspondants (fichier `/etc/nsd/target.milxc.zone` sur "target-dmz")
 	* Exécuter `./mi-lxc.py print` pour visualiser la topologie redéfinie
