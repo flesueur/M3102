@@ -29,7 +29,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 <!--  * TD4.2 SPF, DKIM, Spam, webmail -->
 * S5 :
   * [CM5](cm5-archi.md) Architecture réseau et firewall (complément en ligne : [ANSSI](https://www.ssi.gouv.fr/administration/guide/definition-dune-architecture-de-passerelle-dinterconnexion-securisee/) (chapitre 2))
-  * TD5.1 Segmentation réseau et IPTables
+  * [TD5.1](td5.1-archi.md) Segmentation réseau et IPTables
 * S6 :
   * CM6 Révisions, questions/réponses
   * TD6.1 Révisions
