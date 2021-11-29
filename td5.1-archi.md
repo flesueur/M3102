@@ -162,7 +162,7 @@ L'objectif d'une politique de sécurité réseau est de limiter les services acc
 
 **Par défaut, tout doit être interdit puis les services souhaités sont explicitement autorisés !**
 
-> Ci-dessous un exemple de matrice de flux qui pourrait correspondre aux 2 zones initiales (insuffisante, donc, et attention ce n'est pas ça qui est implémenté par l'iptables initial) :
+> Ci-dessous un exemple de matrice de flux qui pourrait correspondre aux 2 zones initiales (int est la zone interne LAN et ext est la zone externe WAN) (insuffisante, donc, et attention ce n'est pas ça qui est implémenté par l'iptables initial) :
 >
 > |   src\dst  |      ext           |     int                      |
 > |:----------:|:------------------:|:----------------------------:|
@@ -170,11 +170,10 @@ L'objectif d'une politique de sécurité réseau est de limiter les services acc
 > |   int      |    tout            |        X                     |
 
 
-Pour rappel, le réseau de l'entreprise est composé de ces différents éléments :
+Pour rappel, le réseau de l'entreprise est composé de ces différents éléments (en plus du routeur, qui a le rôle particulier de gérer les échanges entre les zones et que vous pouvez ici ignorer dans la définition du contenu de vos zones) :
 
 | Machine           | Description |
 | :-------:         | ----------- |
-| target-router     | Routeur     |
 | target-admin      | Ordinateur de l'administrateur système. Il doit pouvoir administrer tout le parc en SSH. |
 | target-commercial | Ordinateur du commercial. Il doit pouvoir envoyer des mails, accéder à l'intranet (site web sur target-intranet) et naviguer sur le web. |
 | target-dev        | Ordinateur du développeur. Il doit pouvoir envoyer des mails, mettre à jour l'intranet par SSH sur target-intranet et naviguer sur le web. |
