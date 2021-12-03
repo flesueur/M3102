@@ -32,7 +32,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
   * [TD5.1](td5.1-archi.md) Segmentation réseau et IPTables
 * S6 :
   * [CM6](cm6-wrapup.md) Révisions, questions/réponses
-  * TD6.1 Révisions
+  * [TD6.1](td6.1-tunnels.md) Tunnels et bonus
 
 ## Pour les curieux
 
