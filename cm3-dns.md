@@ -129,6 +129,7 @@ La robustesse (résistance + passage à l'échelle)
 * Grâce à l'architecture par la redondance des serveurs d'autorité
 * Grâce au protocole par le mécanisme de cache
 
+Illustration : [TCP/IP Guide](http://www.tcpipguide.com/free/t_DNSNameResolutionProcess-2.htm)
 
 Les usages autour
 =================
