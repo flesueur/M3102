@@ -11,28 +11,34 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 
 ## Programme
 
-* S1 :
+* S19 :
   * [CM1](cm1.md) Introduction "C'est quoi internet ?" et panorama du cours
-  * [TD1.1](td1.1-milxc.md) Découverte MI-LXC
-<!--  * [TD1.2](td1.2-shell.md) Wargame shell -->
-* S2 :
+* S20 :
+  * [TD1](td1.1-milxc.md) Découverte MI-LXC
   * [CM2](cm2-crypto.md) Cryptographie et sécurité des communications (complément en ligne : [Section "Bases de la crypto"](https://github.com/flesueur/csc/blob/master/cours.md#bases-de-la-crypto))
-  * [TD2.1](td2.1-crypto.md) Cryptographie JdR
-  * [TD2.2](td2.2-apache.md) Apache/CMS
-* S3 :
+<!--  * [TD1.2](td1.2-shell.md) Wargame shell -->
+* S21/S22 :
+  * [TD2](td2.1-crypto.md) Cryptographie JdR
+  * TD3 Mots de passe
+* S22 :
+  * [TD4](td2.2-apache.md) Apache/CMS/Tunnels
   * [CM3](cm3-dns.md) DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
-  * [TD3.1](td3.1-dns.md) DNS
-<!--  * TD3.2 CA ACME -->
-* S4 :
+* S23 :
+  * [TD5](td3.1-dns.md) DNS
   * [CM4](cm4-mail.md) Mail (complément en ligne : [B. Sonntag](https://www.iletaitunefoisinternet.fr/post/7-email-sonntag/))
-  * [TD4.1](td4.1-mail.md) SMTP, POP, IMAP
+* S24 :
+  * [TD6](td4.1-mail.md) SMTP, POP, IMAP
+  * [CM5](cm5-archi.md) Architecture réseau et firewall (complément en ligne : [ANSSI](https://www.ssi.gouv.fr/administration/guide/definition-dune-architecture-de-passerelle-dinterconnexion-securisee/) (chapitre 2))
+* S25 :
+  * [TD7](td5.1-archi.md) Segmentation réseau et IPTables
+  * [CM6](cm6-wrapup.md) Révisions, questions/réponses
+
 <!--  * TD4.2 SPF, DKIM, Spam, webmail -->
-* S5 :
+<!-- * S5 :
   * [CM5](cm5-archi.md) Architecture réseau et firewall (complément en ligne : [ANSSI](https://www.ssi.gouv.fr/administration/guide/definition-dune-architecture-de-passerelle-dinterconnexion-securisee/) (chapitre 2))
   * [TD5.1](td5.1-archi.md) Segmentation réseau et IPTables
 * S6 :
-  * [CM6](cm6-wrapup.md) Révisions, questions/réponses
-  * [TD6.1](td6.1-tunnels.md) Tunnels et bonus
+  * [TD6.1](td6.1-tunnels.md) Tunnels et bonus -->
 
 ## Pour les curieux
 
