@@ -1,7 +1,9 @@
 TD1.1 Découverte MI-LXC
 =======================
 
-Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=adb51140-dae2-4cc6-ba1c-15cd1f91c913). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+
+Pour vous connecter à la VM, utilisez le compte `root` avec le mot de passe `root`.
 
 MI-LXC simule un internet minimaliste que nous utiliserons tout au long de la matière. Ce TD couvre la découverte de l'environnement existant et les premiers éléments qui seront nécessaires pour l'étendre par la suite. Dans la suite de la matière, vous installerez et configurerez un réseau et des services qui s'interconnecteront avec cet existant.
 
@@ -9,7 +11,7 @@ MI-LXC simule un internet minimaliste que nous utiliserons tout au long de la ma
 
 > La VM peut être affichée en plein écran. Si cela ne fonctionne pas, il faut parfois changer la taille de fenêtre manuellement, en tirant dans l'angle inférieur droit, pour que VirtualBox détecte que le redimensionnement automatique est disponible. Il y a une case adéquate (taille d'écran automatique) dans le menu écran qui doit être cochée. Si rien ne marche, c'est parfois en redémarrant la VM que cela peut se déclencher. Mais il *faut* la VM en grand écran.
 
-> Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import puis installer le paquet open-vm-tools-desktop dans la VM pour profiter du redimensionnement automatique du bureau (`apt install open-vm-tools-desktop` dans un shell).
+> Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import.
 
 
 Cheat sheet
@@ -60,7 +62,7 @@ Toutes les machines ont les deux comptes suivants : debian/debian et root/root (
 
 > Question 3 : Depuis la machine isp-a-home, ouvrez un navigateur pour vous connecter au site web de l'UBS. Cela fonctionne-t-il ? Cette page est-elle hébergée dans l'infrastructure MI-LXC ?
 
-> Question 4 : Ouvrez un shell sur la machine target-dmz (commande attach, donc). Installez le package nano grâce à l'outil `apt` et vérfifiez que vous pouvez maintenant éditer des fichiers avec nano.
+> Question 4 : Ouvrez un shell sur la machine target-dmz (commande attach, donc). Installez le package nano grâce à l'outil `apt` et vérifiez que vous pouvez maintenant éditer des fichiers avec nano.
 
 > Dans la VM et sur les machines MI-LXC, vous pouvez donc installer des logiciels supplémentaires. Par défaut, vous avez mousepad pour éditer des fichiers de manière graphique.
 
@@ -126,7 +128,9 @@ Une fois ceci défini, un `./mi-lxc.py print` pour vérifier la topologie, puis 
 
 On peut enfin faire un `./mi-lxc.py start` et vérifier le bon démarrage.
 
-> Attention, pour des raisons de gestion des IP et des routes, étonnamment, il n'y a pas de façon simple pour que le routeur puisse lui-même initier des communications. C'est-à-dire que si tout fonctionne bien il sera démarré, aura de bonnes tables de routage, mais pour autant ne pourra pas ping en dehors du subnet du transitaire. C'est le comportement attendu et donc vérifier la connectivité du routeur ne peut pas se faire comme ça. On verra ensuite comment vérifier cela depuis un poste interne et nous utiliserons, sur le routeur ou ses voisins BGP, les commandes `birdc show route all` et `birdc show protocols` pour inspecter les tables de routage et vérifier l'établissement des sessions BGP.
+<!-- > Attention, pour des raisons de gestion des IP et des routes, étonnamment, il n'y a pas de façon simple pour que le routeur puisse lui-même initier des communications. C'est-à-dire que si tout fonctionne bien il sera démarré, aura de bonnes tables de routage, mais pour autant ne pourra pas ping en dehors du subnet du transitaire. C'est le comportement attendu et donc vérifier la connectivité du routeur ne peut pas se faire comme ça. On verra ensuite comment vérifier cela depuis un poste interne et nous utiliserons, sur le routeur ou ses voisins BGP, les commandes `birdc show route all` et `birdc show protocols` pour inspecter les tables de routage et vérifier l'établissement des sessions BGP. -->
+
+> Sur le routeur ou ses voisins BGP, les commandes `birdc show route all` et `birdc show protocols` permettent d'inspecter les tables de routage et vérifier l'établissement des sessions BGP.
 
 > Question 5 : Quels ajouts avez-vous fait dans `global.json` ?
 

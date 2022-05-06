@@ -4,9 +4,9 @@ _François Lesueur ([francois.lesueur@univ-ubs.fr](mailto:francois.lesueur@univ-
 
 Cette page recense les séances du module M3102 "Services réseaux". L'objectif est d'expliquer le fonctionnement d'Internet en tant que réseau de réseaux, Internet est donc notamment l'union des systèmes d'information de tous les acteurs. Séance après séance, vous allez créer un SI minimal (DNS, HTTP, Mail, etc.) interconnectable avec le reste du monde et ainsi constater qu'Internet est le résultat de chaque acteur/AS qui offre et consomme des services.
 
-Ce module se situe entre M2102 (Couches OSI, de la modulation à IP, avec un peu de routage/adressage IP) et M4101C. Il dure 6 semaines, avec chaque semaine 1 séance de cours (1h30) et 2 séances de TD (2*1h30) (attention, pour des raisons d'edt, la séance de cours a en fait lieu à la fin de la semaine précédent les TD). Le contenu sera détaillé au fur et à mesure de la période.
+Ce module se situe entre M2102 (Couches OSI, de la modulation à IP, avec un peu de routage/adressage IP) et M4101C. Il dure 7 semaines, avec chaque semaine 1 séance de cours (1h30) et 2 séances de TD (2*1h30) (attention, pour des raisons d'edt, la séance de cours a en fait lieu à la fin de la semaine précédent les TD).
 
-Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (https://github.com/flesueur/mi-lxc), pour laquelle il faudra télécharger une VM Virtualbox **avant** le TD1.1 "Découverte de MI-LXC" : [.ova à télécharger ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Il faudra arriver en séance avec Virtualbox installé et le .ova de MI-LXC déjà téléchargé, l'installation et la découverte de la VM seront ensuite le programme de la séance TD1.1.
+Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (https://github.com/flesueur/mi-lxc), pour laquelle il faudra télécharger une VM Virtualbox **avant** le TD1 "Découverte de MI-LXC" : [.ova à télécharger ici](https://filesender.renater.fr/?s=download&token=adb51140-dae2-4cc6-ba1c-15cd1f91c913), nous utiliserons la version 1.4.2pre2. Il faudra arriver en séance avec Virtualbox installé et le .ova de MI-LXC déjà téléchargé, l'installation et la découverte de la VM seront ensuite le programme de la séance TD1.
 
 
 ## Programme
@@ -14,7 +14,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 * S19 :
   * [CM1](cm1.md) Introduction "C'est quoi internet ?" et panorama du cours
 * S20 :
-  * [TD1](td1.1-milxc.md) Découverte MI-LXC
+  * [TD1](td1-milxc.md) Découverte MI-LXC
   * [CM2](cm2-crypto.md) Cryptographie et sécurité des communications (complément en ligne : [Section "Bases de la crypto"](https://github.com/flesueur/csc/blob/master/cours.md#bases-de-la-crypto))
 <!--  * [TD1.2](td1.2-shell.md) Wargame shell -->
 * S21/S22 :
