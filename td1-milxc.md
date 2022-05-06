@@ -1,4 +1,4 @@
-TD1.1 Découverte MI-LXC
+TD1 Découverte MI-LXC
 =======================
 
 Ce TP sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=adb51140-dae2-4cc6-ba1c-15cd1f91c913). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
