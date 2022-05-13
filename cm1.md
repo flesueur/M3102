@@ -63,4 +63,4 @@ Les TODO
 ========
 
 * Venir en TD avec son laptop. Combien faut-il en prévoir en complément ?
-* Télécharger l'[ova de MI-LXC](https://filesender.renater.fr/?s=download&token=2ca6036b-49b8-4b4c-93bb-95c5de051400) et installer VirtualBox **avant le premier TD** !
+* Télécharger l'[ova de MI-LXC](https://filesender.renater.fr/?s=download&token=adb51140-dae2-4cc6-ba1c-15cd1f91c913) et installer VirtualBox ou VMWare **avant le premier TD** !
