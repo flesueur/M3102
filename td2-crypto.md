@@ -1,4 +1,4 @@
-TD2.1 : Usage de la cryptographie asymétrique
+TD2 : Usage de la cryptographie asymétrique
 =============================================
 
 _Pas de compte-rendu pour ce TD_

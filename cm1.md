@@ -20,7 +20,7 @@ Comment est structuré internet ?
 
 Un réseau de réseaux :
 
-* Acentré (pas de chef, pas de décision unique sans consensus des acteurs indépendants, pas de point de défaillance unique (SPOF)). *Est-ce toujours aussi vrai ? De la panne Facebook aux clouds*
+* Acentré (**pas de chef, pas de décision unique sans consensus des acteurs indépendants, pas de point de défaillance unique (SPOF)**). *Est-ce toujours aussi vrai ? De la panne Facebook aux clouds*
 * Structuré autour de la notion d'AS (systèmes autonomes, environ 100 000) qui forment le découpage de premier niveau
 * Chaque AS (exemple : RENATER, Orange) est ensuite sous-divisé en interne
 * Les AS s'interconnectent entre eux et le protocole BGP assurent la glu entre ces AS
@@ -53,10 +53,8 @@ Panorama du cours
 * Un peu de sécurité des communications (crypto)
 * Du web (HTTP)
 * Du DNS
-* De l'autorité de certification
 * Du mail
 * Du firewall et de l'archi réseau
-* De la gestion centralisée ou à distance : DHCP, SSH, Ansible
 
 
 Les TODO

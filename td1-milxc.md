@@ -13,6 +13,7 @@ MI-LXC simule un internet minimaliste que nous utiliserons tout au long de la ma
 
 > Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import.
 
+> Le compte-rendu est à déposer en binôme sur Moodle avant mardi 24 mai soir.
 
 Cheat sheet
 ===========

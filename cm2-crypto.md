@@ -106,5 +106,5 @@ Exemple : le modèle HTTPS
 Ce qu'on va faire en TD
 =======================
 
-* TD2.1 : Crypto asymétrique
-* TD3.2 : CA
+* TD2 : Crypto asymétrique
+* TD3 : Stockage des mots de passe

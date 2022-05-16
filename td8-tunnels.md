@@ -1,4 +1,4 @@
-TD6.1 Tunnels et bonus (3 heures)
+TD bonus : Tunnels et bonus (3 heures)
 ====================
 
 _Compte-rendu à préparer et déposer en binôme_

@@ -1,4 +1,4 @@
-TD2.2 Apache/CMS
+TD4 Apache/CMS
 ================
 
 Ce TD couvre la configuration et l'utilisation d'un serveur HTTP Apache ainsi qu'un CMS Wordpress.
