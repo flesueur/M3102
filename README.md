@@ -19,7 +19,7 @@ Une large part des séances pratiques sera réalisée sur la plateforme MI-LXC (
 <!--  * [TD1.2](td1.2-shell.md) Wargame shell -->
 * S21/S22 :
   * [TD2](td2-crypto.md) Cryptographie JdR
-  * [TD3](td3-passwords) Mots de passe
+  * [TD3](td3-passwords.md) Mots de passe
 * S22 :
   * [TD4](td4-apache.md) Apache/CMS/Tunnels
   * [CM3](cm3-dns.md) DNS (complément en ligne : [S. Bortzmeyer](https://www.iletaitunefoisinternet.fr/post/1-dns-bortzmeyer/))
