@@ -5,7 +5,7 @@ CM2 Cryptographie et sécurité des communications - Notes de cours
 À la rencontre d'Alice, Bob et Ernest
 =====================================
 
-Comment permettre à Alice et Bob de communiquer de manière *sûre* sur un canal *non sûr* ?
+Comment permettre à Alice et Bob de communiquer de manière *sûre* sur un canal *non sûr* ? Notion centrale en sécurité/crypto : le **modèle d'attaque**.
 
 * Alice et Bob veulent communiquer, Ernest écoute (attaque passive) ou altère (attaque active) les échanges
 * Le medium non sûr :
@@ -98,7 +98,7 @@ Exemple : le modèle HTTPS
   * nom = nom d'hôte DNS (par exemple www.univ-ubs.fr)
   * tiers = une autorité de certification (par exemple Let's Encrypt)
   * => On a bien une association entre un nom et une clé, ici certifiée par un tiers
-* Le client doit valider la signature de la CA :
+* Le client doit valider la signature de la CA, et ainsi vérifier l'association (clé publique, nom) :
   * Il lui faut donc vérifier avec la clé publique de la CA
   * Les clés publiques des CA reconnues par les clients sont pré-installées dans les navigateurs, pas de magie, il faut une *ancre de confiance* dans le logiciel
 
