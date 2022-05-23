@@ -1,6 +1,8 @@
 TD3 : Stockage et authentification par mot de passe
 =============================================
 
+_Pas de compte-rendu pour ce TD_
+
 Ce TD présente le stockage et l'authentification par mot de passe côté serveur. Il s'agit typiquement du problème rencontré par une application web qui souhaite authentifier ses utilisateurs, ou de ce qui est mis en œuvre dans une base de mots de passes système (/etc/shadow ou LDAP). Pour cela, l'application va stocker en base les comptes existants ainsi que le moyen de les authentifier. Comme il n'est évidemment pas souhaitable de stocker les mots de passe des utilisateurs en clair, nous allons analyser comment résoudre ce problème.
 
 Contexte général
