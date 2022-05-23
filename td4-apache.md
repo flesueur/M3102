@@ -1,9 +1,9 @@
-TD4 Apache/CMS
+TD4 Apache/CMS/Tunnels
 ================
 
 Ce TD couvre la configuration et l'utilisation d'un serveur HTTP Apache ainsi qu'un CMS Wordpress.
 
-Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=19a6f8f4-0cf8-47a4-bd05-db4b9ea2d4e4). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
 
 > Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import puis installer le paquet open-vm-tools-desktop dans la VM pour profiter du redimensionnement automatique du bureau (`apt install open-vm-tools-desktop` dans un shell).
 
@@ -120,4 +120,63 @@ Enfin, installez un thème, un plugin et écrivez un premier billet
 
 > Question 10 : Comme tout logiciel (que ce soit un binaire compilé depuis un code source C comme le serveur HTTPD Apache ou un code source PHP interprété à l'exécution), WordPress doit être tenu à jour afin d'installer les correctifs de sécurité. Pour chacune des méthodes d'installation, comment se passera ce mécanisme de mise à jour ? Pouvez-vous trouver des avantages et inconvénients à ces méthodes ?
 
-**Votre compte-rendu doit être déposé sur Moodle en fin de journée au format PDF uniquement**
+
+Tunnels
+=======
+
+En utilisant des tunnels, vous allez voir comment cacher une connexion (par exemple HTTP) dans une autre connexion (par exemple SSH)
+
+SSH
+---
+
+L'outil ssh permet de réaliser des tunnels avec ses options -L (Local) et -R (Remote). Deux exemples :
+* `ssh -L 8080:192.168.1.2:80 192.168.2.4`:
+  * La machine locale ouvre une connexion SSH vers la machine 192.168.2.4
+  * La machine locale ouvre le port 8080 en écoute
+  * Tout ce qui entre localement sur ce port 8080 emprunte le tunnel SSH jusqu'à 192.168.2.4 puis la machine 192.168.2.4 route ces paquets vers 192.168.1.2 sur le port 80
+* `ssh -R 8080:192.168.1.2:80 192.168.2.4` est symétrique :
+  * La machine locale ouvre une connexion SSH vers la machine 192.168.2.4
+  * La machine 192.168.2.4 ouvre le port 8080 en écoute
+  * Tout ce qui entre sur 192.168.2.4 sur ce port 8080 emprunte le tunnel SSH jusqu'au client SSH puis ce client SSH route ces paquets vers 192.168.1.2 sur le port 80
+
+Vous allez mettre en place deux tunnels SSH, chacun depuis target-dev vers isp-a-home :
+* Dans le premier, vous utiliserez -L pour qu'un `curl localhost:8080` exécuté sur target-dev récupère la page sur le serveur web (port 80) de 100.81.0.2 (un site externe dont on aurait souhaité interdire l'accès depuis target)
+* Dans le second, vous utiliserez -R pour qu'un `curl localhost:8080` exécuté sur isp-a-home récupère la page sur le serveur web (port 80) de 100.80.0.5 (l'intranet de target)
+
+> Question 11 : Recopiez les commandes ssh exécutées.
+
+> Question 12 : Utilisez Wireshark (avec le filtre ssh ou http) pour afficher les paquets SSH entre target-dev et isp-a-home et les paquets HTTP vers 100.81.0.2 et 100.80.0.5.
+
+Netcat
+------
+
+
+Imaginez que vous êtes le développeur et que vous souhaitez fournir un accès au serveur web interne de prototypage "target-intranet" à un client externe, alors que celui-ci n'est normalement pas accessible de l'externe ! Vous allez créer un tunnel pour contourner la politique de sécurité. Vous disposez pour cela des machines "target-dev" (votre poste de travail interne) et "isp-a-home" (une machine extérieure, à votre domicile).
+
+Nous allons utiliser l'outil `netcat` pour établir un tunnel très simple.
+
+Connectez-vous sur la machine "isp-a-home". Nous allons commencer par éteindre le service _Apache_ en écoute pour libérer le port 80 qui nous sera utile puis nous allons écouter les connexions sur le port HTTP (TCP/80).
+```bash
+service apache2 stop
+while true; do nc -v -l -p 80 -c "nc -l -p 8080"; done
+```
+
+Enfin, côté "target-dev", nous mettons en place la connexion sortante vers la machine distante:
+```bash
+while true; do nc -v 100.120.0.3 80 -c "nc 100.80.0.5 80"; sleep 2; done
+```
+
+>Pour rappel :
+>* 100.120.0.3 = isp-a-home
+>* 100.80.0.5 = target-intranet
+
+Testez avec la machine "isp-a-hacker" que vous pouvez bien accéder au serveur intranet depuis l'externe sans aucun contrôle via l'URL `http://100.120.0.3:8080`
+
+> Question 13 : À l'aide d'un schéma, expliquez ce tunnel.
+
+> Question 14 : Retrouvez-le dans Wireshark
+
+Il est très difficile de bloquer ou même détecter les tunnels (tunnel chiffré par SSH, ou qui mime une apparence de HTTP, etc.)
+
+
+**Votre compte-rendu doit être déposé sur Moodle au format PDF uniquement**
