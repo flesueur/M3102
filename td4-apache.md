@@ -74,7 +74,13 @@ Vous devez tout d'abord créer un fichier `.htpasswd` qui va contenir les couple
 
 > Question 4 : Quelles commandes avez-vous tapées ? Quel est votre fichier .htpasswd résultat ?
 
-Vous devez ensuite spécifier quel dossier doit être protégé. Vous trouverez le nécessaire dans la [documentation officielle](https://httpd.apache.org/docs/2.4/fr/howto/auth.html), à parcourir jusqu'à la section "Autorisation d'accès à plusieurs personnes" (incluse). Lisez attentivement la partie sur les prérequis, votre fichier de configuration apache2 est `/etc/apache2/apache2.conf` (et non `httpd.conf` comme mentionné à certains endroits de cette documentation). Validez enfin le fonctionnement en vérifiant que l'authentification est bien demandée au client lors d'une connexion graphique avec Firefox.
+Vous devez ensuite spécifier quel dossier doit être protégé. Vous trouverez le nécessaire dans la [documentation officielle](https://httpd.apache.org/docs/2.4/fr/howto/auth.html), à parcourir jusqu'à la section "Autorisation d'accès à plusieurs personnes" (incluse). Lisez attentivement la partie sur les prérequis, votre fichier de configuration apache2 est `/etc/apache2/apache2.conf` (et non `httpd.conf` comme mentionné à certains endroits de cette documentation).
+
+Vous devez réaliser ce contrôle de 2 façons distinctes :
+* D'abord en intégrant directement les directives `Auth*` dans une section `<Directory>...</Directory>`, par exemple en vous inspirant de la section concernant `/var/www/` dans le fichier de configuration `/etc/apache2/apache2.conf`
+* Ensuite en intégrant un `AllowOverride` dans la section concernant ce même répertoire puis en plaçant un fichier `.htaccess` dans le dossier `/var/www` (AllowOverride est décrit dans la partie "Les prérequis" de la page de documentation officielle)
+
+ Validez chaque fonctionnement en vérifiant que l'authentification est bien demandée au client lors d'une connexion graphique avec Firefox.
 
 > Question 5 : Quelles modifications/ajouts avez-vous fait ?
 
