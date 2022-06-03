@@ -72,14 +72,14 @@ Contrôle d'accès
 
 Nous allons maintenant contrôler l'accès au sous-dossier créé (par login/mot de passe).
 
-Vous devez tout d'abord créer un fichier `.htpasswd` qui va contenir les couples login/mot de passe autorisés. Vous pouvez le placer dans le sous-dossier à protéger ou ailleurs, par exemple dans un dossier (à créer) `/etc/apache2/htpasswd/`. Vous utiliserez pour cela la commande `htpasswd` en faisant attention à utiliser la fonction de hachage bcrypt (une option à htpasswd) au lieu du MD5 utilisé par défaut (Explication [ici](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/), pas à lire en TD mais pour les curieux).
+Vous devez tout d'abord créer un fichier `.htpasswd` qui va contenir les couples login/mot de passe autorisés. Vous pouvez par exemple le placer dans un dossier (à créer) `/etc/apache2/htpasswd/` (pour des raisons de sécurité, on évitera de le placer dans un dossier servi par Apache comme `/var/www/html/...`). Vous utiliserez pour cela la commande `htpasswd` en faisant attention à utiliser la fonction de hachage bcrypt (une option à htpasswd) au lieu du MD5 utilisé par défaut (Explication [ici](https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/), pas à lire en TD mais pour les curieux).
 
 > Question 4 : Quelles commandes avez-vous tapées ? Quel est votre fichier .htpasswd résultat ?
 
 Vous devez ensuite spécifier quel dossier doit être protégé. Vous trouverez le nécessaire dans la [documentation officielle](https://httpd.apache.org/docs/2.4/fr/howto/auth.html), à parcourir jusqu'à la section "Autorisation d'accès à plusieurs personnes" (incluse). Lisez attentivement la partie sur les prérequis, votre fichier de configuration apache2 est `/etc/apache2/apache2.conf` (et non `httpd.conf` comme mentionné à certains endroits de cette documentation).
 
 Vous devez réaliser ce contrôle de 2 façons distinctes :
-* D'abord en intégrant directement les directives `Auth*` dans une section `<Directory>...</Directory>`, par exemple en vous inspirant de la section concernant `/var/www/` dans le fichier de configuration `/etc/apache2/apache2.conf`
+* D'abord en intégrant directement les directives `Auth*` dans une section `<Directory>...</Directory>`, par exemple en vous inspirant de la section concernant `/var/www/` dans le fichier de configuration `/etc/apache2/apache2.conf`. Attention à bien exécuter un `systemctl reload apache2` pour prendre en compte les changements dans les `.conf`
 * Ensuite en intégrant un `AllowOverride` dans la section concernant ce même répertoire puis en plaçant un fichier `.htaccess` dans le dossier `/var/www` (AllowOverride est décrit dans la partie "Les prérequis" de la page de documentation officielle)
 
  Validez chaque fonctionnement en vérifiant que l'authentification est bien demandée au client lors d'une connexion graphique avec Firefox.
