@@ -105,9 +105,9 @@ MariaDB
 
 MariaDB est un fork de MySQL que nous allons utiliser ici, avec PHPMyAdmin pour aider l'administration (création de bases, d'utilisateurs, etc.).
 
-Installez les paquets mariadb-server et phpmyadmin. Lors de l'installation de phpmyadmin, vous aurez à répondre à quelques questions : utilisez la fonctionnalité dbconfig, notez le mot de passe que vous choisirez pour l'utilisateur phpmyadmin et activez la configuration pour apache2.
+Installez d'abord mariadb-server. Pour finaliser l'installation, exécutez `mysql_secure_installation`, qui permettra de mieux configurer MariaDB et de spécifier un mot de passe root (par défaut vide et non autorisé).
 
-Pour finaliser l'installation, exécutez `mysql_secure_installation`, qui permettra de mieux configurer MariaDB et de spécifier un mot de passe root (par défaut vide et non autorisé).
+Installez ensuite phpmyadmin (faîtes bien cela *après* avoir installé mariadb-server, dans un autre apt-get, sinon il y aura une erreur). Lors de l'installation de phpmyadmin, vous aurez à répondre à quelques questions : utilisez la fonctionnalité dbconfig, notez le mot de passe que vous choisirez pour l'utilisateur phpmyadmin et activez la configuration pour apache2.
 
 > Question 8 : Faîtes une capture d'écran de PHPMyAdmin connecté en tant que root
 
