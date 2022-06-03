@@ -40,7 +40,7 @@ Les acteurs
 Protocole
 ---------
 
-* UDP, écoute sur le port 53
+* Historiquement UDP, écoute sur le port 53. Progressivement TCP également.
 * Protocole binaire (et non texte comme HTTP, pas de netcat !)
 * Des outils de dialogue : dig, drill, nslookup
 
@@ -140,6 +140,7 @@ Filtrage
 * Point de passage quasi-obligé, historiquement en clair et classiquement centralisé chez les FAI
 * Au niveau État pour la censure (application de blocage administratif de l'orient à l'occident)
 * Au niveau organisation pour limiter l'accès internet des employés
+* Attention, ce n'est pas une mesure de sécurité car facile à contourner...
 
 Open resolvers
 --------------
@@ -159,5 +160,10 @@ DoT / DoH
 Ce qu'on va faire en TD
 =======================
 
-* TD3.1 DNS
-* (TD3.2 CA ACME)
+* TD5 DNS
+
+Bonus
+=====
+
+https://jvns.ca/blog/2022/05/10/pages-that-didn-t-make-it-into--how-dns-works-/
+https://jvns.ca/blog/2022/02/01/a-dns-resolver-in-80-lines-of-go/
