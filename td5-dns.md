@@ -5,7 +5,7 @@ _Compte-rendu à préparer et déposer en binôme_
 
 Ce TD couvre la configuration et l'utilisation du DNS, à la fois côté serveurs d'autorité et de résolution.
 
-Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=19a6f8f4-0cf8-47a4-bd05-db4b9ea2d4e4). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
 
 > Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import puis installer le paquet open-vm-tools-desktop dans la VM pour profiter du redimensionnement automatique du bureau (`apt install open-vm-tools-desktop` dans un shell).
 
@@ -91,7 +91,7 @@ dig @80.67.169.12 www.univ-ubs.fr      # Interroge le serveur (résolveur) 80.67
 
 Le serveur racine alternatif O de MI-LXC est accessible à l'IP 100.100.0.10.
 
-Nous allons faire la résolution manuellement depuis la machine `isp-a-home`. Commencez par démarrer wireshark sur cette machine (passage root avec su, écoute sur eth0 puis filtre "dns" pour ne voir que les paquets qui nous intéressent). En utilisant dig depuis la machine `isp-a-home` et en interrogeant successivement chaque nœud de l'arbre DNS depuis cette racine 100.100.0.10, résolvez le nom d'hôte `www.target.milxc`. À chaque étape, retrouvez les requêtes et les réponses dans Wireshark : dans la fenêtre d'analyse (zone du milieu), dépliez la partie DNS jusqu'à trouver le contenu décodé des questions et réponses DNS.
+Nous allons faire la résolution manuellement depuis la machine `isp-a-home`. Commencez par démarrer wireshark sur cette machine (écoute sur eth0 puis filtre "dns" pour ne voir que les paquets qui nous intéressent). En utilisant dig depuis la machine `isp-a-home` et en interrogeant successivement chaque nœud de l'arbre DNS depuis cette racine 100.100.0.10, résolvez le nom d'hôte `www.target.milxc`. À chaque étape, retrouvez les requêtes et les réponses dans Wireshark : dans la fenêtre d'analyse (zone du milieu), dépliez la partie DNS jusqu'à trouver le contenu décodé des questions et réponses DNS.
 
 > Question 4 : Notez le chemin de résolution vers ce nom d'hôte, les questions posées et reçues par dig auprès des différents serveurs faisant autorité, jusqu'à obtenir l'IPv4 souhaitée.
 
@@ -154,4 +154,4 @@ Relancez le serveur NSD et vérifiez l'absence d'erreurs dans les logs (`journal
 
 > Question 9 (bonus) : Afin d'obtenir un système robuste et conforme aux recommandations standards, il faudrait ensuite dupliquer cette zone sur un serveur secondaire, indépendant, qui serait aussi annoncé dans la zone parente .milxc (par exemple sur target-infra). Explorez cela et rédigez ce que vous aurez compris ou réalisé.
 
-**Votre compte-rendu doit être déposé sur Moodle en fin de journée au format PDF uniquement, un dépôt par binôme.**
+**Votre compte-rendu doit être déposé sur Moodle au format PDF uniquement, un dépôt par binôme.**
