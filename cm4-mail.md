@@ -127,7 +127,7 @@ SPF
 ---
 
 * Un domaine possède son infrastructure, ses serveurs SMTP
-* Les mails se prétendant d'adresses "@CeDomaine.org" devraient logiquement venir de ces SMTP
+* Les mails se prétendant d'adresses "@CeDomaine.org" devraient logiquement venir de ses SMTP
 * => Annoncer dans la zone DNS "CeDomaine.org" un enregistrement SPF déclarant les serveurs autorisés à envoyer en son nom
 * Le MSA de "CeDomaine.org" doit authentifier ses utilisateurs, s'assurer qu'il n'autorise à envoyer pour ce domaine que les utilisateurs légitimes. On limite ainsi les usurpations et l'usage de notre nom pour des spams
 * Quand un MTA tiers reçoit un mail "@CeDomaine.org", il fait une requête DNS :
@@ -145,7 +145,7 @@ DKIM
 ----
 
 * Un domaine possède son infrastructure, ses serveurs SMTP
-* Les mails se prétendant d'adresses "@CeDomaine.org" devraient logiquement venir de ces SMTP
+* Les mails se prétendant d'adresses "@CeDomaine.org" devraient logiquement venir de ses SMTP
 * => Générer une paire de clés cryptographiques, signer avec la clé privée sur ces serveurs, annoncer dans la zone DNS "CeDomaine.org" un enregistrement DKIM déclarant la clé publique autorisée à signer
 * Le MSA de "CeDomaine.org" doit authentifier ses utilisateurs, s'assurer qu'il n'autorise à envoyer pour ce domaine que les utilisateurs légitimes. On limite ainsi les usurpations et l'usage de notre nom pour des spams
 * Quand un MTA tiers reçoit un mail "@CeDomaine.org", il fait une requête DNS :
@@ -194,7 +194,7 @@ Les acteurs
 Ce qu'on va faire en TD
 =======================
 
-* TD4.1 Mail
+* TD6 Mail
 
 
 Biblio
