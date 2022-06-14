@@ -7,7 +7,7 @@ _Compte-rendu à préparer et déposer en binôme_
 
 Ce TD couvre la configuration et l'utilisation du mail, côté client et serveur. Les interactions sont complexes, l'objectif n'est pas d'avoir absolument un système mail entièrement fonctionnel, mais plutôt de bien appréhender la construction générale de ce type de système. Soyez méthodiques dans votre travail car vous allez manipuler de nombreuses perspectives différentes !
 
-Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://filesender.renater.fr/?s=download&token=2f121a18-f94d-45d1-a079-f68229ebdfa9). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
+Ce TD sera réalisé dans la VM MI-LXC disponible [ici](https://flesueur.irisa.fr/mi-lxc/images/milxc-debian-amd64-1.4.2pre3.ova). Avant de lancer la VM, il peut être nécessaire de diminuer la RAM allouée. Par défaut, la VM a 3GO : si vous avez 4GO sur votre machine physique, il vaut mieux diminuer à 2GO, voire 1.5GO pour la VM (la VM devrait fonctionner de manière correcte toujours).
 
 > Si vous êtes sous Windows et que la VM ne fonctionne pas avec VirtualBox, vous pouvez utiliser à la place VMWare Player. Dans ce cas, il faudra cliquer sur "Retry" lors de l'import puis installer le paquet open-vm-tools-desktop dans la VM pour profiter du redimensionnement automatique du bureau (`apt install open-vm-tools-desktop` dans un shell).
 
@@ -235,4 +235,4 @@ Roundcube est un webmail simple disponible dans les paquets Debian.
 
 
 
-**Votre compte-rendu doit être déposé sur Moodle en fin de journée au format PDF uniquement, un dépôt par binôme.**
+**Votre compte-rendu doit être déposé sur Moodle au format PDF uniquement, un dépôt par binôme.**
