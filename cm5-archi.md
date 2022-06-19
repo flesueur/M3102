@@ -14,7 +14,7 @@ Il était une fois les réseaux à plat
 
 * Naturellement, comme on l'a fait dans les TD successifs : un subnet, tout le monde dedans !
 * Sauf que c'est en fait une mauvaise idée pour plein de raisons...
-* On va donc sub-diviser en sous-réseaux au niveau IP
+* On va donc sous-diviser en sous-réseaux au niveau IP
 
 Raisons humaines
 ----------------
@@ -23,7 +23,7 @@ Raisons humaines
 * Le cerveau humain a ses limites (sisi)
 * Besoin de cartographier, décomposer pour s'y repérer
 * Besoin d'une certaine autonomie/indépendance entre les parties pour maîtriser la gestion de chacune au quotidien
-* Subdivision en sous-réseaux logiques au niveau IP
+* Sous-division en sous-réseaux logiques au niveau IP
 * Par exemple géographiques (bâtiments, services, filiales, ...)
 
 Exemple :
@@ -186,4 +186,4 @@ Pare-feu (_Firewall_)
 Ce qu'on va faire en TD
 =======================
 
-* TD5.1 IPTables, SSH, segmentation
+* TD7 IPTables, segmentation
