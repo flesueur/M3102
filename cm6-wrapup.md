@@ -1,4 +1,4 @@
-CM6 Wrap-up + Questions/Réponses- Notes de cours
+CM6 Wrap-up + Questions/Réponses - Notes de cours
 ================================================
 
 Wrap-up
@@ -40,9 +40,3 @@ Questions/Réponses
 ==================
 
 (pour l'instant, je fais semblant de ne pas connaître les questions...)
-
-
-Retours
-=======
-
-Questionnaire rapide et anonyme (3 questions : ce qui vous a plu, ce qui vous a déplu, suggestions d'améliorations) [ici](https://framaforms.org/retour-m3102-services-reseaux-1637759395). Clôture dimanche 12/12, merci !
